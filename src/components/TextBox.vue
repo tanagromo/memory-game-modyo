@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineModel } from 'vue'
+import { defineModel } from 'vue'
 
 defineProps({
   type: {

@@ -1,7 +1,7 @@
 <template>
-  <div class="relative h-[100dvh] bg-pink-100">
+  <div class="relative h-[100dvh] bg-pink-300">
     <div v-if="player">
-      hi
+      <GameBoard />
     </div>
     <div v-else>
       <PlayerModal v-model="player" />
@@ -12,6 +12,7 @@
 <script setup>
 import { ref, onMounted, watchEffect } from 'vue'
 import PlayerModal from '@/components/PlayerModal.vue'
+import GameBoard from '@/components/GameBoard.vue'
 
 const player = ref('')
 
