@@ -1,13 +1,13 @@
 <template>
   <Modal>
-    <div class="flex flex-col gap-6 justify-center items-center">
-      <p class="font-bold">Are you ready to have fun? Please type your name</p>
+    <div class="flex flex-col gap-6 justify-center">
+      <p class="font-bold">Are you ready to have fun? <br> Please type your name</p>
       <TextBox v-model="name" placeholder="Your name..." />
     </div>
     <div class="flex justify-end mt-6">
       <Button
         :disabled="!name"
-        class="bg-pink-300"
+        class="bg-[#f88f89]"
         @click="startGame"
       >
         Play

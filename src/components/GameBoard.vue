@@ -3,9 +3,12 @@
     Game Over!
     <Button @click="restartGame">Restart Game</Button>
   </div>
-  <div v-else-if="!isGameOver && cards.length">
+  <div
+    v-else-if="cards.length"
+    class="pt-3"
+    >
     <Score :correctGuesses="correctGuesses" :errors="errors" />
-    <div class="grid grid-cols-5 gap-4 p-4">
+    <div class="grid grid-cols-4 md:grid-cols-5 gap-4 p-4">
       <Card
         v-for="card in cards"
         :key="card.id"

@@ -3,7 +3,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Coming Soon']
+        'sans': ['Mali']
       },
     },
   },

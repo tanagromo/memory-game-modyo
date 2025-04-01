@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-[100dvh] bg-pink-300">
+  <div class="relative h-screen bg-[#fbf6d0]">
     <div v-if="player">
       <GameBoard />
     </div>
