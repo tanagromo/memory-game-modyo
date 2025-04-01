@@ -3,8 +3,8 @@
     <div class="w-full h-full relative card-inner" :class="{ 'is-flipped': isFlipped }">
       <div class="absolute w-full h-full rounded-lg card-front bg-[#f88f89] border-b-2 border-r-2 border-[#1f0e1a] hover:shadow-lg"></div>
 
-      <div class=" w-full h-full card-back">
-        <img :src="imageUrl" :alt="name" class="object-cover w-full h-full" />
+      <div class=" w-full h-full card-back border-2 border-[#1f0e1a] shadow-lg rounded-lg">
+        <img :src="imageUrl" :alt="name" class="object-cover w-full h-full rounded-md" />
       </div>
     </div>
   </div>
