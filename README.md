@@ -4,9 +4,9 @@ Este es un juego de memoria desarrollado con Vue 3 y Vite. Permite a los jugador
 
 # 🚀 Tecnologías utilizadas
 
- * Vue 3 con Composition API
+* Vue 3 con Composition API
 
- * Vite como bundler
+* Vite como bundler
 
 * TypeScript para tipado
 
@@ -25,23 +25,30 @@ cd memory-game-modyo
 
 2️⃣ Instalar dependencias
 
+```bash
 npm install
+```
 
 3️⃣ Ejecutar el proyecto en modo desarrollo
 
+```bash
 npm run dev
+```
 
 🔍 Pruebas
 
 Para ejecutar las pruebas unitarias con Vitest:
 
+```bash
 npm run test
+```
 
-🚀 Despliegue en Netlify
+# 🚀 Despliegue en Netlify
 
 Este proyecto está desplegado en Netlify. Cada push a la rama principal (main o master) desencadena un despliegue automático.
 
 Si deseas hacer un despliegue manual desde la terminal:
 
+```bash
 netlify deploy --prod
-
+```
