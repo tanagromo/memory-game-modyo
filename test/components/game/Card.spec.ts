@@ -6,10 +6,12 @@ describe('Card', () => {
   it('renders correctly with props', () => {
     const wrapper = mount(Card, {
       props: {
-        imageUrl: 'https://cdn.modyo.cloud/uploads/6bab500a-c518-4cee-818b-2d3e3e79c036/original/fish.jpg',
-        name: 'Bear',
-        isFlipped: false,
-        isMatched: false
+        card: {
+          url: 'https://cdn.modyo.cloud/uploads/6bab500a-c518-4cee-818b-2d3e3e79c036/original/fish.jpg',
+          name: 'Bear',
+          isFlipped: false,
+          isMatched: false
+       }
       }
     })
 
@@ -23,10 +25,12 @@ describe('Card', () => {
     const emit = vi.fn()
     const wrapper = mount(Card, {
       props: {
-        imageUrl: 'https://cdn.modyo.cloud/uploads/6bab500a-c518-4cee-818b-2d3e3e79c036/original/fish.jpg',
-        name: 'Bear',
-        isFlipped: false,
-        isMatched: false
+        card: {
+          url: 'https://cdn.modyo.cloud/uploads/6bab500a-c518-4cee-818b-2d3e3e79c036/original/fish.jpg',
+          name: 'Bear',
+          isFlipped: false,
+          isMatched: false
+        }
       }
     })
 
@@ -37,10 +41,12 @@ describe('Card', () => {
   it('does not emit click event when already flipped or matched', async () => {
     const wrapper = mount(Card, {
       props: {
-        imageUrl: 'https://cdn.modyo.cloud/uploads/6bab500a-c518-4cee-818b-2d3e3e79c036/original/fish.jpg',
-        name: 'Bear',
-        isFlipped: true,
-        isMatched: false
+        card: {
+          url: 'https://cdn.modyo.cloud/uploads/6bab500a-c518-4cee-818b-2d3e3e79c036/original/fish.jpg',
+          name: 'Bear',
+          isFlipped: true,
+          isMatched: false
+        }
       }
     })
 

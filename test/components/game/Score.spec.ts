@@ -17,7 +17,7 @@ describe('Score', () => {
 
     await wrapper.vm.$nextTick()
 
-    expect(wrapper.text()).toContain('Vamos Juan :D')
+    expect(wrapper.text()).toContain("Let's play Juan :D")
   })
   it('displays correct matches and errors', () => {
     const wrapper = mount(Score, {

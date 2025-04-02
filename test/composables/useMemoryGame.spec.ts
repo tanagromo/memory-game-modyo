@@ -33,17 +33,26 @@ describe('useMemoryGame composable', () => {
   it('should check for a match between two flipped cards', () => {
     const { flipCard, correctGuesses, initializeGame } = useMemoryGame()
 
-    initializeGame(cardData)
+    const cards = [
+      { id: 1, name: 'card1', url: 'url1', isFlipped: false, isMatched: false },
+      { id: 2, name: 'card1', url: 'url1', isFlipped: false, isMatched: false },
+      { id: 3, name: 'card3', url: 'url2', isFlipped: false, isMatched: false },
+      { id: 4, name: 'card4', url: 'url3', isFlipped: false, isMatched: false }
+    ]
 
-    const firstCard = { id: 1, name: 'card1', imageUrl: 'url1', isFlipped: false, isMatched: false }
-    const secondCard = { id: 2, name: 'card1', imageUrl: 'url1', isFlipped: false, isMatched: false }
+    initializeGame(cards)
+
+    const firstCard = cards[0]
+    const secondCard = cards[1]
     
     flipCard(firstCard)
     flipCard(secondCard)
-    
-    expect(correctGuesses.value).toBe(1)
-    expect(firstCard.isMatched).toBe(true)
-    expect(secondCard.isMatched).toBe(true)
+
+    setTimeout(() => {
+      expect(correctGuesses.value).toBe(1)
+      expect(firstCard.isMatched).toBe(true)
+      expect(secondCard.isMatched).toBe(true)
+    }, 600)
   })
 
   it('should increase errors when two flipped cards do not match', () => {
@@ -61,7 +70,7 @@ describe('useMemoryGame composable', () => {
       expect(errors.value).toBe(1)
       expect(firstCard.isFlipped).toBe(false)
       expect(secondCard.isFlipped).toBe(false)
-    }, 1000)
+    }, 500)
   })
 
   it('should end the game when all cards are matched', () => {

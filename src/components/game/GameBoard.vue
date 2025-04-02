@@ -1,7 +1,7 @@
 <template>
   <div v-if="isGameOver">
     <div class="h-screen flex flex-col justify-center items-center gap-8">
-      <h1 class="text-6xl text-[#1f0e1a]"><3 <3 Amazing {{ playerName }} you won <3 <3 </h1>
+      <h1 class="w-[4/6] md:w-full text-center text-2xl md:text-6xl text-[#1f0e1a]"><3 <3 Amazing {{ playerName }} you won <3 <3 </h1>
       <Button
         class="bg-[#f88f89] text-[#fbf6d0]"
         @click="restartGame"
