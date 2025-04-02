@@ -1,9 +1,21 @@
 <template>
-  <div class="w-full h-[95px] md:h-[160px] perspective-distant cursor-pointer" @click="flipCard">
-    <div class="card-inner w-full h-full relative" :class="{ 'is-flipped': card.isFlipped }">
-      <div class="card-front absolute w-full h-full rounded-lg bg-[#f88f89] border-b-2 border-r-2 border-[#1f0e1a] hover:shadow-lg"></div>
-
-      <div class=" w-full h-full card-back border-2 border-[#1f0e1a] shadow-lg rounded-lg">
+  <div
+    class="w-full h-[95px] md:h-[160px] perspective-distant cursor-pointer"
+    :aria-label="card.isFlipped ? `Showing ${card.name} card` : 'Hidden card'"
+    @click="flipCard"
+    >
+    <div
+      class="card-inner w-full h-full relative"
+      :class="{ 'is-flipped': card.isFlipped }"
+    >
+      <div
+        class="card-front absolute w-full h-full rounded-lg bg-[#f88f89] border-b-2 border-r-2 border-[#1f0e1a] hover:shadow-lg"
+        :aria-hidden="card.isFlipped ? 'true' : 'false'"
+      />
+      <div
+        class="w-full h-full card-back border-2 border-[#1f0e1a] shadow-lg rounded-lg"
+        :aria-hidden="card.isFlipped ? 'false' : 'true'"
+      >
         <img :src="card.url" :alt="card.alt_text || card.name" class="object-cover w-full h-full rounded-md" />
       </div>
     </div>
@@ -27,8 +39,6 @@ const flipCard = () => {
 </script>
 
 <style scoped>
-
-
 .card-inner {
   transition: transform 0.6s;
   transform-style: preserve-3d;

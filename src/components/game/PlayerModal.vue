@@ -1,11 +1,22 @@
 <template>
   <Modal
     role="dialog"
+    aria-labelledby="modal-title"
     aria-hidden="false"
   >
     <div class="flex flex-col gap-6 justify-center">
-      <p class="font-bold">Are you ready to have fun? <br> Please type your name</p>
-      <TextBox v-model="name" placeholder="Your name..." :autofocus="true" @keyup.enter="startGame" />
+      <p
+        id="modal-title"
+        class="font-bold">
+        Are you ready to have fun? <br> Please type your name
+      </p>
+      <TextBox
+        v-model="name"
+        placeholder="Your name..."
+        :autofocus="true"
+        aria-placeholder="Enter your name"
+        @keyup.enter="startGame"
+        />
     </div>
     <div class="flex justify-end mt-6">
       <Button
@@ -13,6 +24,7 @@
         class="bg-[#f88f89]"
         :aria-disabled="!name ? 'true' : 'false'"
         @click="startGame"
+        aria-label="Start the game"
       >
         Play
       </Button>

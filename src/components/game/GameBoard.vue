@@ -1,29 +1,40 @@
 <template>
-  <div v-if="isGameOver">
+  <section v-if="isGameOver">
     <div class="h-screen flex flex-col justify-center items-center gap-8">
-      <h1 class="w-[4/6] md:w-full text-center text-2xl md:text-6xl text-[#1f0e1a]"><3 <3 Amazing {{ playerName }} you won <3 <3 </h1>
+      <h1
+        aria-live="polite"
+        class="w-[4/6] md:w-full text-center text-2xl md:text-6xl text-[#1f0e1a]">
+        🎉 Amazing {{ playerName }}, you won! Congratulations 🎉
+      </h1>
       <Button
         class="bg-[#f88f89] text-[#fbf6d0]"
+        aria-label="Restart the game"
         @click="restartGame"
       >
         Restart Game
       </Button>
     </div>
-  </div>
-  <div
+  </section>
+  <section
     v-else-if="cards.length"
     class="pt-3"
     >
     <Score :correctGuesses="correctGuesses" :errors="errors" />
-    <div class="grid grid-cols-4 md:grid-cols-5 gap-4 p-4">
+    <div
+      role="grid"
+      class="grid grid-cols-4 md:grid-cols-5 gap-4 p-4"
+      >
       <Card
         v-for="card in cards"
         :key="card.id"
         :card
         @click="flipCard(card)"
+        @keydown.enter="flipCard(card)"
+        role="gridcell"
+        tabindex="0"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
