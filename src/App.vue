@@ -11,8 +11,8 @@
 
 <script setup>
 import { ref, onMounted, watchEffect } from 'vue'
-import PlayerModal from '@/components/PlayerModal.vue'
-import GameBoard from '@/components/GameBoard.vue'
+import PlayerModal from '@/components/game/PlayerModal.vue'
+import GameBoard from '@/components/game/GameBoard.vue'
 
 const player = ref('')
 

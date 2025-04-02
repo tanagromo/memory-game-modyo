@@ -1,13 +1,17 @@
 <template>
-  <Modal>
+  <Modal
+    role="dialog"
+    aria-hidden="false"
+  >
     <div class="flex flex-col gap-6 justify-center">
       <p class="font-bold">Are you ready to have fun? <br> Please type your name</p>
-      <TextBox v-model="name" placeholder="Your name..." />
+      <TextBox v-model="name" placeholder="Your name..." :autofocus="true" @keyup.enter="startGame" />
     </div>
     <div class="flex justify-end mt-6">
       <Button
         :disabled="!name"
         class="bg-[#f88f89]"
+        :aria-disabled="!name ? 'true' : 'false'"
         @click="startGame"
       >
         Play

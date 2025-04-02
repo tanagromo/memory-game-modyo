@@ -1,16 +1,17 @@
 import { ref } from 'vue'
+import type { Card } from '@/types/card.ts'
 
 export default function useMemoryGame() {
-  const originalData = ref<any[]>([])
-  const cards = ref<any[]>([])
-  const flippedCards = ref<any[]>([])
-  const matchedCards = ref<any[]>([])
+  const originalData = ref<Card[]>([])
+  const cards = ref<Card[]>([])
+  const flippedCards = ref<Card[]>([])
+  const matchedCards = ref<Card[]>([])
   const isGameOver = ref(false)
   const isProcessing = ref(false)
   const errors = ref(0)
   const correctGuesses = ref(0)
   
-  const initializeGame = (cardData: any[]) => {
+  const initializeGame = (cardData: Card[]) => {
     originalData.value = cardData
     
     const duplicatedCards = [...cardData, ...cardData]  
@@ -24,13 +25,13 @@ export default function useMemoryGame() {
     }))
   }
   
-  const shuffleCards = (cards: any[]) => {
+  const shuffleCards = (cards: Card[]) => {
     for (let i = cards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));[cards[i], cards[j]] = [cards[j], cards[i]]
     }
   }
   
-  const flipCard = (card: any) => {
+  const flipCard = (card: Card) => {
     if (isProcessing.value || card.isFlipped || card.isMatched) return
 
     card.isFlipped = true
@@ -49,7 +50,7 @@ export default function useMemoryGame() {
       firstCard.isMatched = true
       secondCard.isMatched = true
       matchedCards.value.push(firstCard, secondCard)
-      correctGuesses.value += 1 // Incrementar aciertos
+      correctGuesses.value += 1
     } else {
       setTimeout(() => {
         firstCard.isFlipped = false
@@ -89,6 +90,7 @@ export default function useMemoryGame() {
     correctGuesses,
     flipCard,
     restartGame,
-    initializeGame
+    initializeGame,
+    checkGameOver
   }
 }

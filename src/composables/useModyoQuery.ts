@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/vue-query'
 
 const BASE_URL = 'https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries'
 
-export function useModyoQuery(perPage: number = 20) {
+export function useModyoQuery(perPage: number = 10) {
   return useQuery({
     queryKey: ['get-modyo-imgs', perPage],
     queryFn: async () => {

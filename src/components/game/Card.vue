@@ -1,29 +1,26 @@
 <template>
   <div class="w-full h-[95px] md:h-[160px] perspective-distant cursor-pointer" @click="flipCard">
-    <div class="w-full h-full relative card-inner" :class="{ 'is-flipped': isFlipped }">
-      <div class="absolute w-full h-full rounded-lg card-front bg-[#f88f89] border-b-2 border-r-2 border-[#1f0e1a] hover:shadow-lg"></div>
+    <div class="card-inner w-full h-full relative" :class="{ 'is-flipped': card.isFlipped }">
+      <div class="card-front absolute w-full h-full rounded-lg bg-[#f88f89] border-b-2 border-r-2 border-[#1f0e1a] hover:shadow-lg"></div>
 
       <div class=" w-full h-full card-back border-2 border-[#1f0e1a] shadow-lg rounded-lg">
-        <img :src="imageUrl" :alt="name" class="object-cover w-full h-full rounded-md" />
+        <img :src="card.url" :alt="card.alt_text || card.name" class="object-cover w-full h-full rounded-md" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
+import Card from '@/types/card'
 
 const props = defineProps<{
-  imageUrl: string
-  name: string
-  isFlipped: boolean
-  isMatched: boolean
+  card: Card
 }>()
 
 const emit = defineEmits(['click'])
 
 const flipCard = () => {
-  if (!props.isFlipped && !props.isMatched) {
+  if (!props.card.isFlipped && !props.card.isMatched) {
     emit('click')
   }
 }

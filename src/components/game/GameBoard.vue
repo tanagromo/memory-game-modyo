@@ -19,10 +19,7 @@
       <Card
         v-for="card in cards"
         :key="card.id"
-        :imageUrl="card.url"
-        :name="card.name"
-        :isFlipped="card.isFlipped"
-        :isMatched="card.isMatched"
+        :card
         @click="flipCard(card)"
       />
     </div>
@@ -32,9 +29,9 @@
 <script setup lang="ts">
 import { watchEffect, ref, onMounted } from 'vue'
 import { useModyoQuery } from '@/composables/useModyoQuery'
-import Card from '@/components/Card.vue'
+import Card from '@/components/game/Card.vue'
 import useMemoryGame from '@/composables/useMemoryGame'
-import Score from '@/components/Score.vue'
+import Score from '@/components/game/Score.vue'
 import Button from '@/components/Button.vue'
 import useConfetti from '@/composables/useConfetti'
 
