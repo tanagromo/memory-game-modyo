@@ -38,7 +38,8 @@ export default function useMemoryGame() {
     flippedCards.value.push(card)
     
     if (flippedCards.value.length === 2) {
-      checkMatch()
+      isProcessing.value = true
+      setTimeout(checkMatch, 600)
     }
   }
 
@@ -55,7 +56,7 @@ export default function useMemoryGame() {
       setTimeout(() => {
         firstCard.isFlipped = false
         secondCard.isFlipped = false
-      }, 1000)
+      }, 500)
       errors.value += 1
     }
 
