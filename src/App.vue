@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, watchEffect } from 'vue'
 import PlayerModal from '@/components/game/PlayerModal.vue'
 import GameBoard from '@/components/game/GameBoard.vue'
@@ -17,7 +17,7 @@ import GameBoard from '@/components/game/GameBoard.vue'
 const player = ref('')
 
 onMounted(() => {
-  player.value = localStorage.getItem('player')
+  player.value = localStorage.getItem('player') || ''
 })
 
 watchEffect(() => {
