@@ -20,7 +20,7 @@ Este es un juego de memoria desarrollado con Vue 3 y Vite. Permite a los jugador
 
 1️⃣ Clonar el repositorio
 
-git clone [https://github.com/tu-usuario/memory-game.git](https://github.com/tanagromo/memory-game-modyo)
+git clone https://github.com/tanagromo/memory-game-modyo
 cd memory-game-modyo
 
 2️⃣ Instalar dependencias
