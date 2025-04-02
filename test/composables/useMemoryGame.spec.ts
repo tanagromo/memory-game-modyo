@@ -1,5 +1,5 @@
 import useMemoryGame  from '@/composables/useMemoryGame'
-import { beforeEach, describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 describe('useMemoryGame composable', () => {
   

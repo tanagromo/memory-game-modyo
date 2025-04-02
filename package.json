@@ -17,9 +17,11 @@
   },
   "devDependencies": {
     "@testing-library/vue": "^8.1.0",
+    "@types/node": "^22.13.17",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.28.0",
     "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/runtime-dom": "^3.5.13",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
     "autoprefixer": "^10.4.21",

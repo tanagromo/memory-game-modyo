@@ -19,6 +19,6 @@ defineProps<{
 const playerName = ref('')
 
 onMounted(() => {
-  playerName.value = localStorage.getItem('player')
+  playerName.value = localStorage.getItem('player') || ''
 })
 </script>

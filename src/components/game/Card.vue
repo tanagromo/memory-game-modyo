@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import Card from '@/types/card'
+import type { Card } from '@/types/card.ts'
 
 const props = defineProps<{
   card: Card
